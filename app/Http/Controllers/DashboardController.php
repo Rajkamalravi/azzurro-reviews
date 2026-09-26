@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
         $operationalInsights = $analytics->getOperationalInsights($filters);
 
-        $recentReviews = $analytics->getFilteredReviews($filters);
+        $recentReviews = $analytics->getRecentReviews($filters, 5);
 
         return view('dashboard', [
             'kpis' => $kpis,

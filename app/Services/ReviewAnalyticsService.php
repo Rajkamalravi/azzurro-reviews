@@ -332,18 +332,20 @@ class ReviewAnalyticsService
     /**
      * Get recent reviews for the dashboard.
      */
-    public function getRecentReviews(int $limit = 10)
-    {
-        return Review::query()
-            ->with([
-                'property',
-                'insights',
-            ])
-            ->orderByDesc('review_date')
-            ->orderByDesc('id')
-            ->limit($limit)
-            ->get();
-    }
+   
+public function getRecentReviews(array $filters = [], int $limit = 5)
+{
+    return $this->filteredReviewQuery($filters)
+        ->with([
+            'property',
+            'insights',
+        ])
+        ->orderByDesc('review_date')
+        ->orderByDesc('id')
+        ->limit($limit)
+        ->get();
+}
+
 
     private function filteredReviewQuery(array $filters = [])
     {
