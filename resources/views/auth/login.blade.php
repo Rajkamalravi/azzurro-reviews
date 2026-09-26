@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
 
-    <title>Login | Azzurro Review Insights</title>
+@section('title', 'Dashboard | Azzurro Hotels')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body class="min-h-screen bg-[#f7f7f8]">
+@section('content')
 
 <div class="min-h-screen flex">
 
@@ -237,5 +230,4 @@
 
 </div>
 
-</body>
-</html>
+@endsection
