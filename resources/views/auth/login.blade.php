@@ -129,7 +129,7 @@
                             id="email"
                             type="email"
                             name="email"
-                            value="{{ old('email') }}"
+                            value="{{ old('email', 'admin@azzurrohotels.com') }}"
                             required
                             autofocus
                             autocomplete="email"
@@ -164,6 +164,7 @@
                             id="password"
                             type="password"
                             name="password"
+                            value="Password@123"
                             required
                             autocomplete="current-password"
                             placeholder="Enter your password"
