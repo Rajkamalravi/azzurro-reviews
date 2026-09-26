@@ -45,12 +45,6 @@
 
                 {{-- Simple metrics --}}
                 <div class="mt-10 grid grid-cols-3 gap-8">
-
-                    <div>
-                        <p class="text-2xl font-bold text-white">4</p>
-                        <p class="mt-1 text-sm text-slate-400">Properties</p>
-                    </div>
-
                     <div>
                         <p class="text-2xl font-bold text-white">24/7</p>
                         <p class="mt-1 text-sm text-slate-400">Insights</p>
