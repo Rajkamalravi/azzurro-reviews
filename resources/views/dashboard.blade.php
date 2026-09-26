@@ -13,17 +13,68 @@
 
 <div class="min-h-screen">
 
-    <header class="bg-white border-b">
-        <div class="max-w-7xl mx-auto px-6 py-5">
-            <h1 class="text-2xl font-bold text-gray-900">
-                Azzurro Hotels
-            </h1>
+    <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
-            <p class="text-gray-500">
-                Guest Review Insights
-            </p>
+            {{-- Logo --}}
+            <div class="flex items-center">
+                <a
+                    href="/"
+                    class="font-display text-[30px] font-extrabold leading-none tracking-tight text-white transition-opacity hover:opacity-90"
+                >
+                    Azzurro<span class="text-pink-500">.</span>
+                </a>
+
+                <div class="ml-8 hidden h-6 w-px bg-slate-800 md:block"></div>
+
+                <div class="ml-8 hidden md:block">
+                    <p class="text-sm font-semibold text-white">
+                        Guest Review Insights
+                    </p>
+                    <p class="text-xs text-slate-500">
+                        Hotel Dashboard
+                    </p>
+                </div>
+            </div>
+
+            {{-- Right Section --}}
+            <div class="flex items-center gap-5">
+
+                {{-- User --}}
+                <div class="hidden text-right sm:block">
+                    <p class="text-sm font-semibold text-white">
+                        {{ auth()->user()->name }}
+                    </p>
+
+                    <p class="text-xs text-slate-500">
+                        {{ auth()->user()->email }}
+                    </p>
+                </div>
+
+                {{-- Avatar --}}
+                <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-sm font-bold text-white shadow-lg shadow-pink-500/20"
+                >
+                    {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                </div>
+
+                {{-- Logout --}}
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <button
+                        type="submit"
+                        class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white"
+                    >
+                        Logout
+                    </button>
+                </form>
+
+            </div>
+
         </div>
     </header>
+
 
     <main class="max-w-7xl mx-auto px-6 py-8">
 
